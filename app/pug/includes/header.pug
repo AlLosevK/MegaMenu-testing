@@ -1,1 +1,53 @@
 header.header
+  nav.nav
+    .nav__logo
+      +icon('logo', 'nav__logo--icon')
+    .nav__list
+      .nav__list--item
+        a.nav__list--link(href='#') Главная
+      .nav__list--second
+        .nav__list--item
+          a.nav__list--link(href='#') Oсновное меню
+        .nav__list--sublist
+          .nav__list--item
+            a.nav__list--link(href='#') Заказать вёрстку
+          .nav__list--item
+            a.nav__list--link(href='#') Отправить макет на проверку
+          .nav__list--item
+            a.nav__list--link(href='#') Хочу работать у вас
+          .nav__list--second
+            .nav__list--item
+              a.nav__list--link(href='#') 
+                span Есть предложение по работе с клиентами
+            .nav__list--sublist
+              .nav__list--item
+                a.nav__list--link(href='#') У меня есть оффер
+              .nav__list--item
+                a.nav__list--link(href='#') Переполнение
+              .nav__list--item
+                a.nav__list--link(href='#') Переполнение
+              .nav__list--item
+                a.nav__list--link(href='#') Переполнение
+              .nav__list--item
+                a.nav__list--link.ovv(href='#') Сделать партнёром
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+          .nav__list--item
+            a.nav__list--link(href='#') Переполнение
+      .nav__list--item
+        a.nav__list--link(href='#') Наши сервисы
+      .nav__list--item
+        a.nav__list--link(href='#') Контакты
+    a.nav__phone(href="#")
+      +icon('phone', 'nav__phone--icon')
+      .nav__phone--numbers +1 (321) 222 - 33 -33
+    button(type='button').nav__btn.btn
+      +icon('menu-burger', 'nav__btn--icon')

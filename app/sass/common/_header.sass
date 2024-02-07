@@ -1,1 +1,242 @@
 .header
+
+.nav
+  width: 100%
+  background-color: #000
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  gap: 20px
+  padding: 17px
+
+  &__logo
+    flex-grow: 1
+    &--icon
+      font-size: 46px
+
+  &__phone
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: row
+    color: #fff
+    text-decoration: none
+    gap: 10px
+    flex-grow: 0
+    &--icon
+      font-size: 24px
+      padding: 3px
+    &--numbers
+      display: none
+
+  &__btn
+    width: 22px
+    height: 14px
+    flex-grow: 0
+    &-icon
+
+
+  &__list
+    position: absolute
+    display: flex
+    flex-direction: column
+    gap: 1px
+    width: 100%
+    max-width: 375px
+    background-color: #000
+    height: 0
+    transition: all 0.3s ease-in
+    top: 80px
+    right: 0
+    overflow: hidden
+    &--second
+      &.is-active
+        & > .nav__list--item
+          & > .nav__list--link
+            &::after
+              transform: translateY(-50%) rotate(0deg)
+        //
+        // & > .nav__list--sublist
+        //   background-color: #131417
+        //   .nav__list--link
+        //     &::after
+        //       transform: translateY(-50%) rotate(0deg)
+
+        & > .nav__list--sublist
+          display: flex
+          height: auto
+        //   & > .nav__list--item
+        //     background-color: #252830
+        //     &:hover
+        //       background-color: #131417
+        //
+        // .nav__list--item
+        //   background-color: #252830
+
+
+      & > .nav__list--item
+        .nav__list--link
+          position: relative
+          padding-right: 18px
+          &::after
+            content: ''
+            position: absolute
+            top: 50%
+            right: 0px
+            transform: translateY(-50%) rotate(180deg)
+
+            width: 8px
+            height: 6px
+            background-image: url(../images/dest/icons/drop.svg)
+            background-size: 100% 100%
+            background-repeat: no-repeat
+            background-position: 0 0
+      .nav__list--second
+        position: relative
+    &--item
+      position: relative
+      background: #252830
+      padding: 20px
+      cursor: pointer
+      &::before
+        display: none
+
+    &--link
+      color: #fff
+      font-size: 18px
+      line-height: 24px
+      text-decoration: none
+      transition: all 0.3s ease-in
+
+    &--sublist
+      display: none
+      flex-direction: column
+      gap: 1px
+      width: 100%
+      width: 100%
+      height: 0
+      transition: all 0.3s ease-in
+      .nav__list--link
+        font-size: 16px
+
+
+    &.is-active
+      height: calc(100vh - 80px)
+
+
+@media (min-width: 480px)
+  .nav
+
+    &__logo
+      flex-grow: 0
+
+    &__phone
+      &--numbers
+        display: block
+
+
+@media (min-width: 768px)
+  .nav
+    &__list
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      flex-direction: row
+      gap: 40px
+      position: relative
+      height: auto
+      max-width: 100%
+      width: auto
+      top: auto
+      right: auto
+      overflow: visible
+      &.is-active
+        height: auto
+      & > .nav__list--item
+        &:hover
+          .nav__list--link
+            color: #EB5757
+      & > .nav__list--second
+        & > .nav__list--item
+          &:hover
+            .nav__list--link
+              color: #EB5757
+
+      &--item
+        padding: 8px 18px
+        background-color: transparent
+        white-space: nowrap
+      &--link
+        max-width: 284px
+        display: block
+        overflow: hidden
+        &.ovv
+          overflow: visible
+        span
+          display: block
+          width: 100%
+          overflow: hidden
+          text-overflow: ellipsis
+      &--sublist
+        position: absolute
+        display: none
+        max-width: 320px
+        top: 40px
+        background-color: #252830
+        z-index: 150
+        border-radius: 0 0 8px 8px
+        margin-top: 23px
+        .nav__list--item
+          background-color: #252830
+          &:last-child
+            border-radius: 0 0 8px 8px
+          &:hover
+            background-color: #131417
+        .nav__list--second
+          &.is-active
+            & > .nav__list--item
+              background-color: #131417
+              &:before
+                transform: rotate(-90deg)
+                bottom: auto
+                left: auto
+                top: 13px
+                right: -27px
+
+          .nav__list--sublist
+            right: -200px
+            max-width: 180px
+            top: -40px
+            border-radius: 8px
+            .nav__list--item
+              &:first-child
+                border-radius: 8px 8px 0 0
+
+      &--second
+        &.is-active
+          .nav__list--sublist
+            background-color: #3B3E45
+          & > .nav__list--item
+            &:before
+              content: ''
+              display: block
+              position: absolute
+              bottom: -23px
+              left: 47px
+              width: 28px
+              height: 14px
+              background-image: url('../images/dest/icons/drop-arrow.svg')
+              background-repeat: no-repeat
+              background-size: cover
+        &:last-child
+          & > .nav__list--item
+            border-radius: 0 0 8px 8px
+
+
+
+
+
+
+    &__btn
+      display: none
